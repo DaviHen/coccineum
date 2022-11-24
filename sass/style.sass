@@ -1,0 +1,472 @@
+@use 'variables' as *
+@use 'baseConfig'
+@use 'utilities' as *
+
+header
+    background-image: linear-gradient(to bottom, $bg-color, $first-color)
+    height: 90vh
+
+    .header-nav-container
+        background-color: $lighter-color
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+
+        @include mediumSiz
+            justify-content: space-between
+            
+
+        .header-nav-logo
+            background-color: $third-color
+            color: $light-txt-color
+            text-decoration: none
+            padding: 0 3rem
+            font-size: 2.6rem
+
+        .header-nav
+
+            ul
+                padding: 0
+                margin: 0
+                font-size: 0
+
+                li
+                    list-style-type: none
+                    display: inline-block
+
+                    a
+                        text-decoration: none
+                        color: $dark-txt-color
+                        font-size: 1.3rem
+                        padding: 1rem 2.5rem
+                        display: block
+                        height: 100%
+                         
+                        &:hover
+                            background-color: $bg-color
+                            color: $light-txt-color
+
+            &-ul
+        
+                @include mediumSiz
+                    display: none
+                    position: absolute
+                    background-color: $lighter-color
+                    width: 50%
+                    height: 90vh
+                    align-items: center
+                    top: 3.9rem
+                    right: 0
+                    flex-direction: column
+
+                    li
+                        width: 100%
+                        text-align: center
+                        a
+                            width: 100%
+                            display: inline-block
+
+                @include mobileRes
+                    width: 100%
+                            
+
+            &-ul.activeMobile
+                    display: flex
+                    
+
+        .mobile-menu
+            display: none
+
+            a
+                color: $dark-txt-color
+                font-size: 1.8rem
+                margin: 0 1rem
+
+                &:hover
+                    color: $light-txt-color
+                    text-shadow: 0px 0px 5px black
+
+            @include mediumSiz
+                display: flex
+            
+
+
+    .header-info
+        display: flex
+        flex-wrap: wrap
+        height: 100%
+        align-items: center
+        justify-content: center
+
+        &-itemsContainer
+            width: 50%
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: center
+
+            @include mediumSiz
+                width: 80%
+
+                h1
+                    font-size: 2rem
+
+                h3
+                    font-size: 1.4rem
+
+            @include mobileRes
+                width: 100%
+
+
+            h1
+                font-size: 3rem
+                color: $light-txt-color
+                text-shadow: 0px 0px 5px black
+                margin-bottom: 2rem
+                text-align: center
+
+            
+            h3
+                font-size: 1.8rem
+                color: $light-txt-color
+                text-shadow: 0px 0px 5px black
+                margin-bottom: 1rem
+                text-align: center
+
+            a
+                text-decoration: none
+                font-size: 1.2rem
+                background-color: $third-color
+                color: $light-txt-color
+                border-radius: 5rem
+                padding: 1rem 3rem
+                display: inline-block
+                transition: background-color 0.5s
+                margin-top: 2rem
+                text-align: center
+
+                &:hover
+                    background-color: $bg-color
+
+    #toTopBtn
+        background-color: $third-color
+        border: none
+        border-radius: 5rem 0 0 5rem
+        color: $light-txt-color
+        text-shadow: 0px 0px 5px black
+        font-size: 1.5rem
+        position: fixed
+        bottom: 10%
+        right: 0
+        padding: 1rem 3rem
+        transform: translateX(60%)
+        transition: transform 1s
+        display: none
+
+        &:hover
+            transform: translateX(0)
+
+        i
+            padding-right: 2rem
+
+
+
+main
+    background-color: $lighter-color
+
+    .main-section-products
+        width: 80%
+        margin: 0 auto
+
+        @include mobileRes
+            width: 100%
+
+        &-talkabout
+
+            h2
+                color: $dark-txt-color
+                font-size: 3rem
+                text-align: center
+                padding-top: 5rem
+
+                span
+                    color: $third-color
+            
+            p
+                font-size: 1.8rem
+                font-weight: normal
+                text-align: center
+                margin: 5rem
+
+                @include mobileRes
+                    margin: 2rem 0
+                    font-size: 1.5rem
+
+        &-container
+            margin-top: 2rem
+            display: flex
+
+            @include mediumSiz
+                flex-wrap: wrap
+                justify-content: center
+
+        &-wrapper
+            display: flex
+            flex-wrap: wrap
+            margin: 0 1rem
+
+            @include mediumSiz
+                width: 40%
+                margin: 1rem 2rem
+
+            @include mobileRes
+                width: 100%
+                margin: 2rem 2rem
+            
+
+            h3
+                font-size: 2rem
+                width: 100%
+                color: $third-color
+                font-weight: bold
+
+            h4
+                font-size: 1.3rem
+                margin: 0.5rem 0
+                font-weight: bold
+
+            p
+                font-size: 1.1rem
+                font-weight: normal
+                text-align: justify
+
+    .main-section-clients
+        width: 80%
+        margin: 5rem auto
+
+        @include mobileRes
+            width: 100%
+            margin: 3rem 0
+
+        h2
+            font-size: 3rem
+            color: $dark-txt-color
+
+            @include mobileRes
+                font-size: 2.5rem
+                text-align: center
+
+        &-container
+            display: flex
+            margin-top: 3rem
+
+            @include mediumSiz
+                flex-wrap: wrap
+
+        &-wrapper
+            display: flex
+            background-color: $first-color
+            border-radius: 5px
+            align-items: center
+            justify-content: center
+            flex-wrap: wrap
+            padding: 2rem
+            margin: 1rem
+            transition: outline 0.2s ease-out
+
+            @include mediumSiz
+                display: block
+
+            @include mobileRes
+                padding: 1rem
+
+            &:hover
+                outline: 5px solid $third-color
+
+                div
+                    border-radius: 100%
+                    outline: 5px solid $third-color
+                    outline-offset: -4px
+
+            div
+                transition: outline 0.2s ease-out
+
+                @include mediumSiz
+                    float: left
+                    margin: 0 1rem
+
+                @include mobileRes
+                    width: 30%
+
+                img
+                    max-width: 100%
+                    border-radius: 100%
+
+            h3
+                width: 100%
+                color: $third-color
+                font-size: 1.8rem
+                text-align: center
+                margin: 1rem
+
+                @include mediumSiz
+                    text-align: left
+
+                @include mobileRes
+                    margin: 1rem 0 .2rem
+
+            p
+                width: 100%
+                text-align: justify
+                color: $light-txt-color
+                line-height: 1.5rem
+                font-size: 1.2rem
+
+                @include mobileRes
+                    font-size: 1rem
+
+    .main-section-contact
+        width: 80%
+        margin: 0 auto
+        padding-bottom: 5rem
+
+        @include mobileRes
+            width: 100%
+            padding: 1rem
+            padding-bottom: 10rem
+
+        h2
+            font-size: 3rem
+            color: $dark-txt-color
+            margin: 2rem 0
+        
+        &-wrapper
+
+
+            #ContactForm
+                background-color: $first-color
+                padding: 1rem
+                border-radius: 5px
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr 1fr
+                padding: 2rem
+
+                @include mobileRes
+                    padding: 1rem
+
+                label
+                    width: 100%
+                    color: $light-txt-color
+                    font-size: 1.5rem
+                    margin: 2rem 0 .5rem 0
+                    grid-column: 1 / 5
+
+                    @include mobileRes
+                        font-size: 1.2rem
+
+                input
+                    border-radius: 5px
+                    border: none
+                    padding: 0.5rem
+                    outline: none
+                    font-size: 1.2rem
+                    transition: outline 0.5s
+                    grid-column: 1 / 5
+
+                    &:focus
+                        outline: 2px solid $third-color
+
+                textarea
+                    grid-column: 1 / 5
+                    font-size: 1.2rem
+                    padding: 0.5rem
+                    resize: none
+                    min-height: 10rem
+                    border: none
+                    border-radius: 5px
+                    outline: none
+                    transition: outline 0.5s
+
+                    &:focus
+                        outline: 2px solid $third-color
+
+                #textAreaSpanCounter
+                    font-size: 1.2rem
+                    color: $light-txt-color
+                    margin: 1rem .2rem
+
+                button
+                    display: inline-block
+                    margin-top: 1rem
+                    font-size: 1.2rem
+                    border-radius: 5rem
+                    border: none
+                    padding: 1.5rem 3rem
+                    background-color: $third-color
+                    color: $light-txt-color
+                    cursor: pointer
+                    transition: background-color 0.5s
+                    grid-column: 1 / 2
+
+                    @include mobileRes
+                        grid-column: 1 / 5
+
+
+                    &:hover
+                        background-color: $bg-color
+
+footer
+    background-color: $bg-color
+
+
+    .footer-info-logo
+
+        h2
+            font-size: 3rem
+            padding: 2rem 0 0 2rem
+            color: $light-txt-color
+
+            @include mobileRes
+                font-size: 2.5rem
+                padding: .5rem 0 0 2rem
+
+    .footer-info
+        display: flex
+        align-items: center
+        justify-content: center
+
+        @include mobileRes
+            flex-wrap: wrap
+
+        .footer-info-items
+            width: 100%
+            
+
+            ul
+                padding: 0
+                margin: 0
+
+
+                .footer-info-items-fLi
+                    font-size: 1.8rem
+                    color: $dark-txt-color
+                    padding: 0 0 1rem 0
+
+                    @include mobileRes
+                        font-size: 1.5rem
+                        padding: 0
+
+                li
+                    list-style: none
+                    margin: 0 1rem
+                    padding: .5rem
+
+                    a
+                        text-decoration: none
+                        font-size: 1.2rem
+                        color: $light-txt-color 
+                        transition: color .4s
+
+                        &:hover
+                            color: $third-color           
